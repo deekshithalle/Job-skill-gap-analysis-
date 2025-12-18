@@ -6,6 +6,7 @@ The **Job Skill Gap Analysis System** is a student-focused web application desig
 
 This project is developed as a **mini project** with an educational focus and real-world relevance.
 
+---
 
 ## 🎯 Problem Statement
 
@@ -17,6 +18,7 @@ Many students struggle to understand:
 
 This system solves the problem by **automatically identifying skill gaps** and suggesting improvement areas.
 
+---
 
 ## 💡 Key Features
 
@@ -26,7 +28,7 @@ This system solves the problem by **automatically identifying skill gaps** and s
 * Clear and simple output for students
 * Beginner-friendly UI
 
-
+---
 
 ## 🛠️ Tech Stack
 
@@ -46,7 +48,7 @@ This system solves the problem by **automatically identifying skill gaps** and s
 * VS Code
 * Git & GitHub
 
-
+---
 
 ## ⚙️ How It Works
 
@@ -56,7 +58,7 @@ This system solves the problem by **automatically identifying skill gaps** and s
 4. Skill gaps are identified
 5. Results are displayed in an easy-to-understand format
 
-
+---
 
 ## ▶️ How to Run the Project Locally
 
@@ -89,9 +91,6 @@ python app.py
 ```bash
 uvicorn backend.app.main:app --reload
 ```
-(or)
-
- python -m uvicorn backend.app.main:app --reload 
 
 ### 5️⃣ Open in browser
 
@@ -142,8 +141,3 @@ B.Tech – Artificial Intelligence & Machine Learning
 ## 📌 Note
 
 This project is built for **educational purposes** and can be further enhanced to match advanced industry requirements.
-
-
- 
-
-
