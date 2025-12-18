@@ -1,0 +1,4 @@
+job_title,company,location,description,extracted_skills
+AI Engineer,TCS,Bangalore,"Python, Machine Learning, Deep Learning, NLP, TensorFlow","['python', 'tensorflow', 'nlp', 'machine learning', 'deep learning']"
+Data Analyst,Infosys,Hyderabad,"SQL, Python, Data Visualization, Statistics, Excel","['python', 'data visualization', 'statistics', 'sql', 'excel']"
+Software Engineer,Wipro,Pune,"Java, OOPs, Data Structures, REST APIs, Problem Solving","['oops', 'data structures', 'rest apis', 'java', 'problem solving']"
