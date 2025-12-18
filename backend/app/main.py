@@ -111,28 +111,35 @@ def ui():
     </body>
     </html>
     """
-
 @app.post("/analyze-ui", response_class=HTMLResponse)
 def analyze_ui(role: str = Form(...), skills: str = Form(...)):
     skills_df = pd.read_csv(SKILLS_CSV)
     courses_df = pd.read_csv(COURSES_CSV)
 
-    row = skills_df[skills_df["job_title"] == role]
+    # ✅ Normalize input role
+    role = role.strip().lower()
+
+    # ✅ Case-insensitive matching
+    row = skills_df[skills_df["job_title"].str.lower() == role]
 
     if row.empty:
-        return "<h3>Role not found in dataset</h3><a href='/ui'>Go Back</a>"
+        return "<h3>Role not found in dataset</h3><a href='/ui'>Go Back</a></h3>"
 
-    required_skills = set(ast.literal_eval(row.iloc[0]["extracted_skills"]))
+    required_skills = set(
+        skill.lower() for skill in ast.literal_eval(row.iloc[0]["extracted_skills"])
+    )
+
     user_skills = set(s.strip().lower() for s in skills.split(","))
 
     missing_skills = required_skills - user_skills
 
-    recommended = courses_df[courses_df["skill"].isin(missing_skills)]
+    recommended = courses_df[courses_df["skill"].str.lower().isin(missing_skills)]
 
     course_html = "".join(
         f"<li><a href='{r.link}' target='_blank'>{r.course_name} ({r.platform})</a></li>"
         for r in recommended.itertuples()
     )
+
 
     return f"""
     <html>
