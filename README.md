@@ -89,7 +89,7 @@ python app.py
 (or)
 
 ```bash
-uvicorn backend.app.main:app --reload
+ python -m uvicorn backend.app.main:app --reload
 ```
 
 ### 5️⃣ Open in browser
